@@ -8,18 +8,19 @@ except Exception:  # pragma: no cover
 from stock_mcp_server.tools.recommend import get_stock_recommendations
 
 
-def main() -> None:
+def create_server() -> FastMCP:
     load_dotenv(find_dotenv(usecwd=True))
+    mcp_app = FastMCP(name="stock-mcp-server", host="127.0.0.1", port=8765)
+    mcp_app.tool()(get_stock_recommendations)
+    return mcp_app
 
-    server = FastMCP(
-        name="stock-mcp-server",
-        version="0.1.0",
-        description="Provides stock momentum analysis and AI recommendations",
-    )
 
-    server.tool()(get_stock_recommendations)
+app: FastMCP = create_server()
+server: FastMCP = app
 
-    server.run()
+
+def main() -> None:
+    app.run("sse")
 
 
 if __name__ == "__main__":
