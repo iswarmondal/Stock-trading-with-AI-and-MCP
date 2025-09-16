@@ -1,0 +1,12 @@
+pyproject.toml
+stock_mcp_server/__init__.py
+stock_mcp_server.egg-info/PKG-INFO
+stock_mcp_server.egg-info/SOURCES.txt
+stock_mcp_server.egg-info/dependency_links.txt
+stock_mcp_server.egg-info/entry_points.txt
+stock_mcp_server.egg-info/requires.txt
+stock_mcp_server.egg-info/top_level.txt
+stock_mcp_server/server/__init__.py
+stock_mcp_server/server/app.py
+stock_mcp_server/tools/__init__.py
+stock_mcp_server/tools/recommend.py

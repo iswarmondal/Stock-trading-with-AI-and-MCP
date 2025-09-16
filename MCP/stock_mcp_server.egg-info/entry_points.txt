@@ -1,0 +1,2 @@
+[console_scripts]
+stock-mcp = stock_mcp_server.server.app:main
